@@ -1,0 +1,237 @@
+{
+  "academicLevels": [
+    {
+      "id": "2eme",
+      "name": "2ème Année du Baccalauréat (2ème Bac)",
+      "streams": [
+        {
+          "id": "pc",
+          "name": "Sciences Physiques (PC)",
+          "academicLevelId": "2eme",
+          "subjects": [
+            {
+              "id": "2pc_math",
+              "name": "Mathématiques",
+              "code": "MATH",
+              "color": "indigo",
+              "description": "Focussing on Limits, Continuity, Derivatives, Complex numbers, Integrals, and Probability.",
+              "lessons": [
+                {
+                  "id": "limites_continuite",
+                  "title": "Limites et Continuité",
+                  "description": "Comprendre le comportement des fonctions réelles aux bornes et le théorème des valeurs intermédiaires.",
+                  "term": 1,
+                  "sections": [
+                    {
+                      "id": "lim_cont_explication",
+                      "title": "1. Continuité en un point et sur un intervalle",
+                      "type": "explanation",
+                      "duration": "10 mins",
+                      "explanationContent": "### Continuité en un Point\n\nUne fonction $f$ définie sur un intervalle ouvert contenant $x_0$ est continue en $x_0$ si et seulement si:\n\n$$\\lim_{x \\to x_0} f(x) = f(x_0)$$\n\n### Théorème des Valeurs Intermédiaires (TVI)\n\nSi $f$ est une fonction continue sur un intervalle fermé $[a, b]$, alors pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \\in [a, b]$ tel que:\n\n$$f(c) = k$$\n\nSi de plus la fonction $f$ est strictement monotone (strictement croissante ou strictement décroissante), alors la solution $c$ est **unique**.",
+                      "reviewCheatSheet": "⚠️ **Astuce Bac Maroc** : Le TVI est incontournable dans les examens nationaux marocains pour prouver l'existence d'une racine unique d'une équation $f(x) = 0$.\n\n- Étape 1 : Vérifier la continuité de $f$ sur $[a,b]$.\n- Étape 2 : Calculer $f(a)$ et $f(b)$ puis vérifier que $f(a) \\times f(b) < 0$.\n- Étape 3 : Vérifier la stricte monotonie de $f$ (calcul du signe de la dérivée $f'$) pour l'unicité."
+                    },
+                    {
+                      "id": "lim_cont_video",
+                      "title": "2. Tutoriel Vidéo : Application du TVI",
+                      "type": "video",
+                      "duration": "15 mins",
+                      "videoUrl": "https://www.youtube.com/embed/S2O6n9O3sV8",
+                      "explanationContent": "Visionnez cette vidéo pour comprendre l'application rigoureuse du théorème des valeurs intermédiaires étape par étape."
+                    },
+                    {
+                      "id": "lim_cont_exercice",
+                      "title": "3. Exercice d'application interactive",
+                      "type": "exercise",
+                      "duration": "12 mins",
+                      "exerciseQuestion": "Soit la fonction f(x) = x³ + 2x - 1 continue et strictement croissante sur [0, 1]. Montrez que l'équation f(x) = 0 admet une unique solution sur cet intervalle. Quelle condition est vérifiée ?",
+                      "exerciseOptions": [
+                        "f(0) = -1 et f(1) = 2, leur produit est négatif.",
+                        "f(0) = 1 et f(1) = -2, leur produit est positif.",
+                        "f n'est pas continue sur cet intervalle.",
+                        "L'équation n'a pas de solution réelle."
+                      ],
+                      "exerciseAnswerIndex": 0,
+                      "exerciseExplanation": "Puisque f est continue et strictement monotone sur [0,1], et f(0) = -1 < 0 alors que f(1) = 2 > 0 (produit f(0) * f(1) = -2 < 0), d'après le TVI, f(x)=0 admet une unique solution sur ]0,1[."
+                    }
+                  ]
+                },
+                {
+                  "id": "suites_numeriques",
+                  "title": "Suites Numériques",
+                  "description": "Étude des suites géométriques, arithmétiques, et critères de convergence.",
+                  "term": 1,
+                  "sections": [
+                    {
+                      "id": "suites_cours",
+                      "title": "1. Cours complet et récurrence",
+                      "type": "explanation",
+                      "duration": "15 mins",
+                      "explanationContent": "### Suite Majorée, Minorée, Bornée\n\n- Établir qu'une suite est majorée : chercher un réel $M$ tel que $\\forall n \\in \\mathbb{N}, u_n \\le M$.\n- Établir qu'une suite est minorée : chercher un réel $m$ tel que $\\forall n \\in \\mathbb{N}, u_n \\ge m$.\n\n### Suite de type $u_{n+1} = f(u_n)$\n\nPour étudier ces suites récurrentes typiques du Bac Marocain:\n1. Utiliser un raisonnement par récurrence pour prouver le bornage.\n2. Étudier le signe de $u_{n+1} - u_n$ en utilisant le signe de $f(x) - x$ sur l'intervalle d'étude.\n3. Si la suite converge vers $\\ell$, alors $\\ell$ vérifie l'équation $f(\\ell) = \\ell$ (sous réserve de continuité)."
+                    },
+                    {
+                      "id": "suites_ex_bac",
+                      "title": "2. Exercice corrigé type Examen National",
+                      "type": "exercise",
+                      "duration": "20 mins",
+                      "exerciseQuestion": "On considère la suite définie par u₀ = 2 et uₙ₊₁ = (3uₙ + 1) / (uₙ + 3). Quelle est la limite l de cette suite si on admet qu'elle converge ?",
+                      "exerciseOptions": [
+                        "l = 0",
+                        "l = 1",
+                        "l = 2",
+                        "l = 3"
+                      ],
+                      "exerciseAnswerIndex": 1,
+                      "exerciseExplanation": "La limite l vérifie l'équation f(l) = l, soit (3l + 1)/(l + 3) = l. Ce qui équivaut à 3l + 1 = l² + 3l, soit l² = 1. Comme uₙ >= 1 pour tout n, la limite est l = 1."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2pc_phys",
+              "name": "Physique-Chimie",
+              "code": "PHYS",
+              "color": "rose",
+              "description": "Wave mechanics, nuclear transformations, electricity (RC, RL, RLC circuits), and chemical kinetic tracking.",
+              "lessons": [
+                {
+                  "id": "ondes_mecaniques",
+                  "title": "Ondes Mécaniques Progressives",
+                  "description": "Étudier la propagation d'une perturbation dans un milieu matériel élastique.",
+                  "term": 1,
+                  "sections": [
+                    {
+                      "id": "ondes_def",
+                      "title": "1. Onde progressive périodique & Retard temporel",
+                      "type": "explanation",
+                      "duration": "12 mins",
+                      "explanationContent": "### Définition\nUne onde mécanique progressive est le phénomène de propagation d'une perturbation dans un milieu matériel élastique, sans transport de matière mais avec transport d'énergie.\n\n### Formule de la célérité (vitesse de propagation)\n\n$$v = \\frac{d}{\\Delta t}$$\n\n### Retard temporel $\\tau$\nLe retard $\\tau$ de la perturbation au point $M$ par rapport à la source $S$ séparés par une distance $SM$ est :\n\n$$\\tau = \\frac{SM}{v}$$\n\nLa perturbation du point $M$ au temps $t$ est celle de la source au temps $t - \\tau$, soit : $y_M(t) = y_S(t - \\tau)$."
+                    },
+                    {
+                      "id": "ondes_exercices",
+                      "title": "2. Exercice interactif de vitesse d'onde",
+                      "type": "exercise",
+                      "duration": "8 mins",
+                      "exerciseQuestion": "Une perturbation se propage le long d'une corde de longueur L = 6m en un temps Δt = 0.3s. Quel est le retard temporel d'un point situé à d = 2m de la source ?",
+                      "exerciseOptions": [
+                        "τ = 0.1 s",
+                        "τ = 0.2 s",
+                        "τ = 0.3 s",
+                        "τ = 0.6 s"
+                      ],
+                      "exerciseAnswerIndex": 0,
+                      "exerciseExplanation": "La célérité de l'onde est v = L / Δt = 6 / 0.3 = 20 m/s. Le retard temporel au point M situé à d = 2m est τ = d / v = 2 / 20 = 0.1 s."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sm",
+          "name": "Sciences Mathématiques (SM)",
+          "academicLevelId": "2eme",
+          "subjects": [
+            {
+              "id": "2sm_math",
+              "name": "Mathématiques Spécifiques",
+              "code": "MATH",
+              "color": "indigo",
+              "description": "Calculus, complex plane transformations, algebraic structures (groups, rings), arithmetic (modular arithmetic).",
+              "lessons": [
+                {
+                  "id": "structure_algebrique",
+                  "title": "Structures Algébriques (Groupes, Anneaux)",
+                  "description": "Introduction aux notions de lois de composition internes, groupes, anneaux et corps.",
+                  "term": 1,
+                  "sections": [
+                    {
+                      "id": "struct_lois",
+                      "title": "1. Lois de composition interne et Groupes",
+                      "type": "explanation",
+                      "duration": "15 mins",
+                      "explanationContent": "### Loi de Composition Interne (LCI)\nUne loi $*$ définie sur un ensemble $E$ est interne si :\n$$\\forall (x, y) \\in E^2, x * y \\in E$$\n\n### Groupe $(G, *)$\nUn couple $(G, *)$ est un groupe si :\n1. $*$ est une loi de composition interne dans $G$.\n2. $*$ est associative.\n3. $*$ possède un élément neutre $e \\in G$.\n4. Tout élément $x \\in G$ possède un symétrique $x' \\in G$ dans $(G, *)$.\n\nSi la loi est commutative, le groupe est dit **commutatif** ou **abélien**."
+                    },
+                    {
+                      "id": "struct_ex_bac",
+                      "title": "2. Exercice d'arithmétique / structures",
+                      "type": "exercise",
+                      "duration": "10 mins",
+                      "exerciseQuestion": "Dans (ℤ, +), quel est l'élément symétrique de x = 5 ?",
+                      "exerciseOptions": [
+                        "-5",
+                        "1/5",
+                        "0",
+                        "5"
+                      ],
+                      "exerciseAnswerIndex": 0,
+                      "exerciseExplanation": "Puisque la loi est l'addition classique et l'élément neutre est 0, le symétrique de x pour la loi + est l'opposé -x. D'où le symétrique de 5 est -5 (car 5 + (-5) = 0)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1ere",
+      "name": "1ère Année du Baccalauréat (1ère Bac)",
+      "streams": [
+        {
+          "id": "sc_ex",
+          "name": "Sciences Expérimentales (S.Ex)",
+          "academicLevelId": "1ere",
+          "subjects": [
+            {
+              "id": "1ex_math",
+              "name": "Mathématiques",
+              "code": "MATH",
+              "color": "teal",
+              "description": "Mathématiques générales pour les filières scientifiques de 1ère Bac.",
+              "lessons": [
+                {
+                  "id": "logique_math",
+                  "title": "Notions de Logique",
+                  "description": "Apprendre les bases du raisonnement mathématique : récurrence, contraposée, l'absurde.",
+                  "term": 1,
+                  "sections": [
+                    {
+                      "id": "logique_cours",
+                      "title": "1. Types de Raisonnement",
+                      "type": "explanation",
+                      "duration": "10 mins",
+                      "explanationContent": "### Raisonnement par Récurrence\nPour démontrer qu'une proposition $P(n)$ est vraie pour tout entier $n \\ge n_0$ :\n1. **Initialisation** : Prouver P(n₀) est vraie.\n2. **Hérédité** : Supposer P(n) est vraie (hypothèse de récurrence) et prouver que P(n+1) est vraie.\n3. **Conclusion** : $P(n)$ est vraie $\\forall n \\ge n_0$."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "forumComments": [
+    {
+      "id": "c1",
+      "lessonId": "limites_continuite",
+      "sectionId": "lim_cont_explication",
+      "userName": "Yassine S.",
+      "userEmail": "yassine@bac.ma",
+      "content": "Est-ce qu'on doit tracer le tableau de variations obligatoirement pour appliquer le TVI rectiligne ?",
+      "createdAt": "2026-05-26T18:30:00Z"
+    },
+    {
+      "id": "c2",
+      "lessonId": "limites_continuite",
+      "sectionId": "lim_cont_explication",
+      "userName": "Inès PC",
+      "userEmail": "ines@bac.ma",
+      "content": "Oui Yassine, c'est mieux d'écrire la stricte monotonie en vérifiant le signe de la dérivée, le tableau résume parfaitement !",
+      "createdAt": "2026-05-26T18:45:00Z"
+    }
+  ]
+}
