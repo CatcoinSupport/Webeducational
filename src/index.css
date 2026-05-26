@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  @apply font-sans bg-[#F8FAFC] text-slate-900 selection:bg-emerald-500 selection:text-white antialiased;
+}
+
+/* Custom Moroccan tile pattern for decoration */
+.bg-moroccan-pattern {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(circle at 100% 150%, #0f172a 24%, #1e293b 24%, #1e293b 28%, #0f172a 28%, #0f172a 36%, #1e293b 36%, #1e293b 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0% 150%, #0f172a 24%, #1e293b 24%, #1e293b 28%, #0f172a 28%, #0f172a 36%, #1e293b 36%, #1e293b 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50% 100%, #1e293b 10%, #0f172a 10%, #0f172a 23%, #1e293b 23%, #1e293b 30%, #0f172a 30%, #0f172a 43%, #1e293b 43%, #1e293b 50%, transparent 50%, transparent);
+  background-size: 40px 20px;
+}
+
